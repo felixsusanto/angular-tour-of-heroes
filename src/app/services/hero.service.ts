@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './hero';
+import { Hero } from '../interfaces/hero';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+
+const hero: Hero = {
+  id: 99,
+  name: 'Suparman'
+};
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +27,10 @@ export class HeroService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
@@ -45,6 +47,6 @@ export class HeroService {
 
   getHero(id: number): Observable<Hero> {
     this.log(`HeroService: fetched hero id=${id}`);
-    return of(HEROES.find(hero => hero.id === id));
+    return of(hero);
   }
 }
