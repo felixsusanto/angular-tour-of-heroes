@@ -1,0 +1,76 @@
+.fx-btn-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.fx-btn-wrapper:focus {
+  outline: none;
+}
+.fx-btn {
+  display: inline-block;
+  padding: 10px;
+  background: #07c;
+  border-radius: 3px;
+  border: 1px solid #07c;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.fx-btn:hover {
+  border-color: rgb(6, 94, 156);
+  background: rgb(6, 94, 156);
+}
+
+.optional-list {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  z-index: 1;
+  background: #fff;
+  min-width: 150px;
+  max-width: 200px;
+}
+.optional-list:before,
+.optional-list:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top: none;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+.optional-list:before {
+  border-bottom-color: #ddd;
+  top: -11px;
+}
+.optional-list:after {
+  border-bottom-color: #fff;
+}
+.optional-list.anchorRight {
+  right: 0;
+}
+.optional-list.anchorRight:before,
+.optional-list.anchorRight:after {
+  left: auto;
+  right: 10px;
+}
+.optional-list li {
+  padding: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.optional-list li.oneliner {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.optional-list li:hover {
+  background-color: #eee;
+}
+.optional-list li + li {
+  border-top: 1px solid #ddd;
+}

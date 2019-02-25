@@ -12,6 +12,7 @@ import { AppRoutingModule } from './modules/app-routing.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { FxBtnComponent } from './components/fx-btn/fx-btn.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    FxBtnComponent
   ],
   imports: [
     BrowserModule,

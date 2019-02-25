@@ -1,0 +1,20 @@
+<div class="fx-btn-wrapper" tabindex="-1" (blur)="onBlur()">
+  <div class="fx-btn"  
+    (click)="onClickBtn()"
+  >
+    {{'Button Name'}}
+    <i *ngIf="options && options.length" 
+      class="fas fa-caret-down"
+    ></i>
+  </div>
+  <ul *ngIf="options && state.showOptions"
+    class="optional-list"
+    [class.anchorRight]="configState.optAnchorRight"
+  >
+    <li *ngFor="let option of options; index as i" 
+      (click)="clickHandler(i)"
+      [innerHTML]="option"
+      [class.oneliner]="configState.oneLiner"
+    ></li>
+  </ul>
+</div>

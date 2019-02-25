@@ -9,9 +9,18 @@ import { HeroService } from '../../services/hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  btnOptions = {
+    oneLiner: true,
+    callbackOnOptClick: function(index) {
+      console.log('hello from callback', index);
+    }
+  };
+  btnOpt2 = {
+    ...this.btnOptions,
+    optAnchorRight: true
+  }
 
   constructor(private heroService: HeroService) { }
-
   ngOnInit() {
     this.getHeroes();
   }
@@ -20,4 +29,10 @@ export class DashboardComponent implements OnInit {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
+
+  optClickHandler(index) {
+    console.log(index);
+  }
+
+ 
 }

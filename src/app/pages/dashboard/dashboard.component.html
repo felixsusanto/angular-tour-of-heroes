@@ -9,3 +9,23 @@
     </div>
   </a>
 </div>
+<app-fx-btn
+  [options]="['<b>https://angular.io/guide/animations</b>', 'Animation provides the illusion of motion']"
+  (noOptClick)="optClickHandler($event)"
+  (optClick)="optClickHandler($event)"
+  [configUser]="btnOptions"
+  [minLength]="1"
+></app-fx-btn>
+<app-fx-btn
+  (noOptClick)="optClickHandler($event)"
+></app-fx-btn>
+
+<div style="text-align: right">
+  <app-fx-btn
+    [options]="['<b>https://angular.io/guide/animations</b>', 'Animation provides the illusion of motion']"
+    (noOptClick)="optClickHandler($event)"
+    (optClick)="optClickHandler($event)"
+    [configUser]="btnOpt2"
+    [minLength]="1"
+  ></app-fx-btn>
+</div>
